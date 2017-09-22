@@ -60,7 +60,6 @@ with open(data_file, encoding='iso-8859-1') as csvfile:
     print(file_headers)
     c = 1
     for row in reader:
-        pass
         if c in ganadores:
             ganadores_count += 1
             print('**********\n#{} Ganador NUMERO {}/{}'.format(ganadores_count, c, lineas))
