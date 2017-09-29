@@ -8,7 +8,7 @@ import csv
 import subprocess
 import random
 
-premios_a_entregar = 10
+premios_a_entregar = 5000
 
 data_file = 'sample-data.csv'
 
@@ -59,10 +59,12 @@ with open(data_file, encoding='iso-8859-1') as csvfile:
     file_headers = next(reader)
     print(file_headers)
     c = 1
+    print('Nro Orden, Nro de Tarjeta')
     for row in reader:
         if c in ganadores:
             ganadores_count += 1
-            print('**********\n#{} Ganador NUMERO {}/{}'.format(ganadores_count, c, lineas))
-            print('Externo: {} Interno:{} DNI:{} FECHA:{} {} Linea:{} Empresa:{}'.format(row['NROEXTERNO'], row['NROINTERNO'], row['DNI'], row['FECHA'], row['HORA'], row['LINEA'], row['EMPRESA']))
+            # print('**********\n#{} Ganador NUMERO {}/{}'.format(ganadores_count, c, lineas))
+            # print('Externo: {} Interno:{} DNI:{} FECHA:{} {} Linea:{} Empresa:{}'.format(row['NROEXTERNO'], row['NROINTERNO'], row['DNI'], row['FECHA'], row['HORA'], row['LINEA'], row['EMPRESA']))
+            print('{},{}'.format(ganadores_count, row['NROEXTERNO']))
         c+= 1
 
